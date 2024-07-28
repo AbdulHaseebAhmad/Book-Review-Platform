@@ -12,7 +12,7 @@ Edit Reviews: Update their reviews if their opinion on a book changes.
 The application is built using modern technologies for both the frontend and backend.
 
 Technologies Used
-Frontend:
+#Frontend:
 
 React
 Vite
@@ -22,7 +22,8 @@ React Redux & Redux Toolkit
 React Icons
 Yup (for validation)
 Redux Thunk (for asynchronous actions)
-Backend:
+
+#Backend:
 
 Node.js
 Express.js

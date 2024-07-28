@@ -55,14 +55,14 @@ Follow these steps to set up the project on your local machine:
 
 ```bash
 git clone https://github.com/yourusername/book-review-app.git
-cd book-review-app
+cd bookreview
 ```
 
 ### 2. Set Up the Frontend
 
 1. Navigate to the frontend directory:
     ```bash
-    cd frontend
+    cd bookreviewapp
     ```
 
 2. Install the required dependencies:
@@ -108,5 +108,3 @@ cd book-review-app
 - **Frontend**: Open [http://localhost:5173](http://localhost:5173) in your browser to access the Book Review App.
 - **Backend API**: The backend API will be running at [http://localhost:5001](http://localhost:5001).
 ```
-
-You can copy and paste this text directly into your GitHub README.md file.

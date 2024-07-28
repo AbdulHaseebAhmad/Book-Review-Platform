@@ -1,0 +1,1 @@
+export const ROUTE_DEFAULT = "viewrecommendedbooks"

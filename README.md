@@ -57,16 +57,16 @@ cd book-review-app
 The frontend will be available at http://localhost:5173 by default.
 
 3. Set Up the Backend  
- 1  Navigate to the backend directory:
-   cd backend
+ 1 Navigate to the backend directory:
+     cd backend
  2 Install the required dependencies:
-    npm install
+     npm install
  3 Create a .env file in the server directory with the following content:
     MONGO_URI=your_mongodb_connection_string
     SESSION_SECRET=your_session_secret
     PORT=5001
  4 Start the backend server:
-   npm run start:dev
+      npm run start:dev
 
 The backend will be available at http://localhost:5001 by default.
 

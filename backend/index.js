@@ -12,7 +12,7 @@ configDotenv();
 const app = express();
 const PORT = process.env.PORT;
 const CookieSecret = process.env.COOKIE_SECRET_KEY;
-
+const mongoURI = process.env.MONGO_URI
 app.use(express.json());
 app.use(cookieParser(CookieSecret));
 
@@ -35,13 +35,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose
-  .connect("mongodb://localhost:27017/BookReviewApplication")
+  .connect(mongoURI)
   .then(() => console.log("Connected to database"))
   .catch((err) => console.error("Database connection error:", err));
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"], 
+    origin: ["http://localhost:5173","https://book-review-platform-ctwaenly1-abduls-projects-967b2885.vercel.app/"], 
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,

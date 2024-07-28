@@ -54,3 +54,26 @@ Follow these steps to set up the project on your local machine:
 ```bash
 git clone https://github.com/yourusername/book-review-app.git
 cd book-review-app
+
+### Set Up the Frontend
+
+1. **Navigate to the frontend directory:**
+
+    ```bash
+    cd client
+    ```
+
+2. **Install the required dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Start the frontend development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+   The frontend will be available at [http://localhost:5173](http://localhost:5173) by default.
+

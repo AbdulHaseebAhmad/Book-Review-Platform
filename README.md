@@ -12,7 +12,7 @@ Edit Reviews: Update their reviews if their opinion on a book changes.
 The application is built using modern technologies for both the frontend and backend.
 
 Technologies Used
-#Frontend:
+Frontend:
 
 React
 Vite
@@ -23,7 +23,7 @@ React Icons
 Yup (for validation)
 Redux Thunk (for asynchronous actions)
 
-#Backend:
+Backend:
 
 Node.js
 Express.js
@@ -38,5 +38,44 @@ User Authentication: Secure sign-up and login processes.
 Review Management: Create, view, and edit book reviews.
 Responsive Design: Optimized for various devices and screen sizes.
 Dynamic Data Handling: Real-time data updates and management.
+
 Getting Started
 Follow these steps to set up the project on your local machine:
+
+1. Clone the Repository
+git clone https://github.com/yourusername/book-review-app.git
+cd book-review-app
+
+2. Set Up the Frontend
+ 1 Navigate to the frontend directory:
+     cd bookreviewapp
+ 2 Install the required dependencies:
+     npm install
+ 3 Start the frontend development server:
+     npm run dev
+
+The frontend will be available at http://localhost:5173 by default.
+
+3. Set Up the Backend  
+ 1  Navigate to the backend directory:
+   cd backend
+ 2 Install the required dependencies:
+    npm install
+ 3 Create a .env file in the server directory with the following content:
+    MONGO_URI=your_mongodb_connection_string
+    SESSION_SECRET=your_session_secret
+    PORT=5001
+ 4 Start the backend server:
+   npm run start:dev
+
+The backend will be available at http://localhost:5001 by default.
+
+4. Access the Application
+Frontend: Open http://localhost:5001 in your browser to access the Book Review App.
+Backend API: The backend API will be running at http://localhost:5001.
+
+
+
+
+
+

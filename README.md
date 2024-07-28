@@ -64,7 +64,7 @@ Follow these steps to set up the project on your local machine:
 
 ```bash
 git clone https://github.com/yourusername/book-review-app.git
-cd book-review-app
+cd bookreview
 ```
 
 ### 2. Set Up the Frontend

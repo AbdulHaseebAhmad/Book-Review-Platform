@@ -1,4 +1,3 @@
-Here's the complete README file formatted for easy copy-pasting into GitHub:
 
 ```markdown
 # Book Review Platform

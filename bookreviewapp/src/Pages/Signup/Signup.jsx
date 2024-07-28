@@ -123,7 +123,7 @@ export default SignupPage;
 export const signupAuthAction = async ({ request, params }) => {
   const requestBody = await request.json();
 
-  const response = await fetch("http://localhost:5001/api/users/auth/signup", {
+  const response = await fetch("https://book-review-platform-qfuv.vercel.app/api/users/auth/signup", {
     method: "POST",
     credentials: "include",
     headers: {

@@ -54,7 +54,7 @@ const HomePage = () => {
 export default HomePage;
 
 export const homeAuthloaders = async ({ request, params }) => {
-  const response = await fetch("http://localhost:5001/api/users/auth/status", {
+  const response = await fetch("https://book-review-platform-qfuv.vercel.app/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {

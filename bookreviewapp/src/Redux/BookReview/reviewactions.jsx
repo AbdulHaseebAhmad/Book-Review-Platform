@@ -31,7 +31,7 @@ export const getpreviousReviews =
         },
       };
       const { data } = await axios.get(
-        `http://localhost:5001/api/reviews/previousreviews?userid=${userid}`,
+        `https://book-review-platform-qfuv.vercel.app/api/reviews/previousreviews?userid=${userid}`,
         config
       );
       console.log(data)
@@ -58,7 +58,7 @@ export const getpreviousReviews =
       }).toString();
       
       const { data } = await axios.get(
-        `http://localhost:5001/api/reviews/getallreviews?${query}`,
+        `https://book-review-platform-qfuv.vercel.app/api/reviews/getallreviews?${query}`,
         config
       );
   
@@ -82,7 +82,7 @@ export const getpreviousReviews =
       };
   
       const { data } = await axios.post(
-        "http://localhost:5001/api/reviews/addreview", // !Forget to Replace with the correct endpoint
+        "https://book-review-platform-qfuv.vercel.app/api/reviews/addreview", // !Forget to Replace with the correct endpoint
         reviewData,
         config
       );
@@ -106,7 +106,7 @@ export const getpreviousReviews =
       };
   
       const { data } = await axios.put(
-        `http://localhost:5001/api/reviews/editreview?reviewid=${reviewData._id}`, // Replace with the correct endpoint
+        `https://book-review-platform-qfuv.vercel.app/api/reviews/editreview?reviewid=${reviewData._id}`, // Replace with the correct endpoint
         reviewData,
         config
       );
@@ -129,7 +129,7 @@ export const getpreviousReviews =
       };
   
       await axios.delete(
-        `http://localhost:5001/api/reviews/deletereview?reviewid=${reviewId}`, 
+        `https://book-review-platform-qfuv.vercel.app/api/reviews/deletereview?reviewid=${reviewId}`, 
         config
       );
   

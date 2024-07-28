@@ -125,7 +125,7 @@ const LoginPage = () => {
 export default LoginPage;
 
 export const AuthLoader = async ({ request, params }) => {
-  const response = await fetch("http://localhost:5001/api/users/auth/status", {
+  const response = await fetch("https://book-review-platform-qfuv.vercel.app/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -150,7 +150,7 @@ export const AuthLoader = async ({ request, params }) => {
 export const loginAuthAction = async ({ request, params }) => {
   const requestBody = await request.json();
 
-  const response = await fetch("http://localhost:5001/api/users/auth/login", {
+  const response = await fetch("https://book-review-platform-qfuv.vercel.app/api/users/auth/login", {
     method: "POST",
     credentials: "include",
     headers: {

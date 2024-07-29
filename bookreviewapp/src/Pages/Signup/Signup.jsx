@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Link, useSubmit, redirect, useActionData } from "react-router-dom";
 import { FORM_FIELDS, SignupSchema } from "./Constants";
 import { ROUTE_DEFAULT as SIGNUP_PAGE_ROUTE } from "./Constants";
+import { ROUTE_DEFAULT as LOGIN_DEFAULT_ROUTE} from "../Login/Constants";
 const SignupPage = () => {
   const submit = useSubmit();
 
@@ -114,7 +115,7 @@ const SignupPage = () => {
           <div className="text-[#FF6600] font-bold my-3">OR</div>
 
           <div className="w-full">
-            <Link to={`${"fg"}`} className="w-[100%]">
+            <Link to={`/${LOGIN_DEFAULT_ROUTE}`} className="w-[100%]">
               <button className="bg-[#223F7A] hover:opacity-95 text-white font-bold py-2 px-4 w-[100%] rounded">
                 Login
               </button>

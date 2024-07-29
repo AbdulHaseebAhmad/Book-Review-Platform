@@ -4,7 +4,6 @@ import { ROUTE_DEFAULT as HOME_ROUTE } from "../Home/Constants";
 const ErrorBoundary = () => {
   const error = useRouteError();
   const [hasError, setHasError] = useState(false);
-console.log(HOME_ROUTE)
   useEffect(() => {
     if (error) {
       setHasError(true);
@@ -14,7 +13,6 @@ console.log(HOME_ROUTE)
 
   const location = useLocation();
   const { pathname } = location;
-  console.log(pathname)
   if (hasError) {
     return (
       <div className="flex flex-col items-center justify-center h-screen bg-[#fef2f2]">
@@ -30,7 +28,9 @@ console.log(HOME_ROUTE)
             Go to Home
           </Link>
         ) : (
-          <p className="mt-4 text-xl font-bold text-[#9f1239]">Try Again Later</p>
+          <p className="mt-4 text-xl font-bold text-[#9f1239]">
+            Try Again Later
+          </p>
         )}
       </div>
     );

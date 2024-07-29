@@ -15,6 +15,10 @@ export const AddReviewSchema = Yup.object().shape({
     inputType:'coverimg',
     msg:"Image URL is Required"
   }),
+  bookgenre: Yup.string().required({
+    inputType: "bookgenre",
+    msg: "Book Genre is Required",
+  }),
   bookauthor: Yup.string().required({
     inputType: "bookauthor",
     msg: "Author name is Required",
@@ -41,6 +45,15 @@ export const FORM_FIELDS = [
     placeholder: "Enter Author's name",
     id: "bookauthor",
   },
+
+  {
+    name: "bookgenre",
+    label: "Book Genre",
+    type: "text",
+    placeholder: "Enter Books Genre",
+    id: "bookgenre",
+  },
+
   {
     name:'coverimg',
     label:'Image URL',

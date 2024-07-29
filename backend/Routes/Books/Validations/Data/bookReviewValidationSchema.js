@@ -9,6 +9,11 @@ export const bookReviewValidationSchema = {
             errorMessager:"The Author Name Must Be A String"
         }
     },
+    bookgenre:{
+        isString:{
+            errorMessager:"The Books Genre Must Be A String"
+        }
+    },
     reviewText:{
         notEmpty:{
             errorMessage:"The Review Field Can Not Be Empty"

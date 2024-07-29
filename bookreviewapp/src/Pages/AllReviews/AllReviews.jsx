@@ -6,12 +6,10 @@ import SearchBar from "../../Components/Filter/Filter";
 const AllReviews = () => {
   const bookreviewstate = useSelector((state) => state.bookReview);
   const { loading, msg, data: reviews } = bookreviewstate;
-  console.log(bookreviewstate)
+  console.log(bookreviewstate);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(
-      getallreviews()
-    );
+    dispatch(getallreviews());
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
@@ -22,7 +20,7 @@ const AllReviews = () => {
           View All Reviews
         </h1>
 
-        <SearchBar/>
+        <SearchBar />
 
         <ul className="space-y-4">
           {!loading && reviews ? (
@@ -32,9 +30,15 @@ const AllReviews = () => {
                 className="bg-gray-50 p-4 rounded-lg shadow-md flex justify-between items-center"
               >
                 <div>
-                  <h2 className="text-xl font-semibold text-[#223F7A] mb-3">
-                    {review.booktitle}
-                  </h2>
+                  <div>
+                    <h2 className="text-xl font-semibold text-[#223F7A] mb-3">
+                      {review.booktitle}
+                    </h2>
+                    <p className="text-gray-700 mb-1">
+                      <strong>Genre:</strong>{" "}
+                      {review.bookgenre ? review.bookgenre : "Unknown"}
+                    </p>
+                  </div>
                   <p className="text-gray-700 mb-1">
                     <strong>Author:</strong> {review.bookauthor}
                   </p>

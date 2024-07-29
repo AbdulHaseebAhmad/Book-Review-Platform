@@ -20,8 +20,9 @@ const SearchBar = () => {
   };
 
   const clearFilter = () => {
-    setSearchTerm("")
-    dispatch(getallreviews());
+    setSearchTerm(undefined)
+    setFilterType(undefined)
+    dispatch(getallreviews({searchTerm,filterType}));
   };
 
   return (
@@ -43,6 +44,8 @@ const SearchBar = () => {
         >
           <option value="booktitle">Book Title</option>
           <option value="bookauthor">Book Author</option>
+          <option value="bookgenre">Book Genre</option>
+
         </select>
         <div className="flex gap-2">
           <button

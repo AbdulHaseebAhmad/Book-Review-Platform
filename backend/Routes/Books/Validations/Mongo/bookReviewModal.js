@@ -9,6 +9,10 @@ const ReviewSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.String,
     required: [true, "Author name is required"],
   },
+  bookgenre: {
+    type: mongoose.Schema.Types.String,
+    required: [true, "The Books Genre is required"],
+  },
   reviewText: {
     type: mongoose.Schema.Types.String,
     required: [true, "Review text is required"],
@@ -36,26 +40,3 @@ const ReviewSchema = new mongoose.Schema({
 
 export const Review = mongoose.model("Reviews", ReviewSchema);
 
-
-/** booktitle: {
-    type: mongoose.Schema.Types.String,
-    required: true,
-  },
-  bookauthor: {
-    type: mongoose.Schema.Types.String,
-  },
-  reviewText: {
-    type: mongoose.Schema.Types.String,
-    required: true,
-  },
-  rating: {
-    type: mongoose.Schema.Types.String,
-  },
-  coverimg: {
-    type: mongoose.Schema.Types.String,
-  },
-  reviewbyuser: {
-    type: mongoose.Schema.Types.String,
-    unique:true,
-    required: true,
-  }, */

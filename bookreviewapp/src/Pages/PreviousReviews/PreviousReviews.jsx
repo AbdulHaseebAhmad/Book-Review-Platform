@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 const PreviousReviewsPage = () => {
   const bookReviewState = useSelector((state) => state.bookReview);
   const { loading, msg, data: reviews } = bookReviewState;
+  console.log(reviews);
   const dispatch = useDispatch();
   const params = useParams();
   const { userid } = params;
@@ -47,9 +48,15 @@ const PreviousReviewsPage = () => {
                   className="bg-gray-50 p-4 rounded-lg shadow-md flex flex-col md:flex-row justify-between items-start md:items-center"
                 >
                   <div className="flex-1">
-                    <h2 className="text-xl font-semibold text-[#223F7A] mb-3">
-                      {review.booktitle}
-                    </h2>
+                    <div>
+                      <h2 className="text-xl font-semibold text-[#223F7A] mb-3">
+                        {review.booktitle}
+                      </h2>
+                      <p className="text-gray-700 mb-1">
+                        <strong>Genre:</strong>{" "}
+                        {review.bookgenre ? review.bookgenre : "Unknown"}
+                      </p>
+                    </div>
                     <p className="text-gray-700 mb-1">
                       <strong>Author:</strong> {review.bookauthor}
                     </p>

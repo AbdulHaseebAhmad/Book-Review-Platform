@@ -1,6 +1,7 @@
 import passport from "passport";
 import { Strategy } from "passport-local";
 import { User } from "../Routes/User/Validations/Mongo/userReviewModal.js";
+import { comparepasswords } from "../Utils/helpers.js";
 
 
 passport.serializeUser((user,done)=>{
@@ -34,8 +35,8 @@ export default passport.use(
         const findUser = await User.findOne({ email });
         if (!findUser) {
           return done(null, false, { message: "The Email Address is Not Registered" });
-        }
-        if (findUser.password !== password) {
+        } //findUser.password !== password
+        if (comparepasswords(password, findUser.password)) {
           return done(null, false, { message: "Bad Credentials" });
         }
         return done(null, findUser);

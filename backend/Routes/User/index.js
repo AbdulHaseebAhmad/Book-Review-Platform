@@ -11,6 +11,7 @@ import { userLoginValidationSchema } from "./Validations/Data/userLoginValidatio
 import "../../Strategies/local-strategy.js";
 import passport from "passport";
 import { userSignupValidationSchema } from "./Validations/Data/userSignupValidationSchema.js";
+import { hashpasswords } from "../../Utils/helpers.js";
 
 const userRoute = Router();
 
@@ -47,6 +48,9 @@ userRoute.post(
     console.log(request.session.id);
     const user = request.validData;
     console.log(`This is users ${user}`);
+    user.password = hashpasswords(user.password)
+    console.log(`This is users ${user.password} with hashed password`);
+
     const newUser = new User(user);
     try {
       const savedUser = await newUser.save();

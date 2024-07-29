@@ -22,12 +22,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Password is required"],
     minlength: [7, "Password must be at least 7 characters long"],
-    validate: {
-      validator: function (v) {
-        return /^[a-zA-Z0-9]+$/.test(v);
-      },
-      message: "Password must be alphanumeric",
-    },
+   
   },
 });
 

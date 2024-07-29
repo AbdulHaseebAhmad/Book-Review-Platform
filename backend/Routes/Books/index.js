@@ -32,7 +32,7 @@ bookReviewRoute.get("/api/reviews/getallreviews", async (request, response) => {
     }
   } catch (err) {
     response
-      .status(500)
+      .status(500) 
       .json({ message: "An error occurred", error: err.message });
   }
 });

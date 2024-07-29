@@ -21,7 +21,7 @@ export const userLoginValidationSchema = {
         },
         isLength: {
           options: { min: 7 },
-          errorMessage: 'Password must be at least 7 characters long',
+          errorMessage: 'Bad Credentials',
         },
         isAlphanumeric: {
           errorMessage: 'Password must be alphanumeric',

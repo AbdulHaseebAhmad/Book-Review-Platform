@@ -52,7 +52,8 @@ const LoginPage = () => {
         encType: "application/json",
       });
     } else {
-      console.log("formIsNotValidated");
+  
+      console.log(data && data);
     }
   };
 

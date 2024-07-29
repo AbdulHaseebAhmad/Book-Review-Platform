@@ -83,11 +83,12 @@ userRoute.post(
     const errorsArray = errors.errors.map((err) => {
       return { inputType: err.path, errormsg: err.msg };
     });
-    if (errors.errors.length === 0) {
+    console.log(errorsArray)
+    if (errorsArray.length === 0) {
       request.validData = validData;
       next();
     } else {
-      response.status(400).send(errorsArray);
+      response.status(400).send({msg:errorsArray});
     }
   },
   (request, response, next) => {

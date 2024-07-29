@@ -36,7 +36,7 @@ export default passport.use(
         if (!findUser) {
           return done(null, false, { message: "The Email Address is Not Registered" });
         } //findUser.password !== password
-        if (comparepasswords(password, findUser.password)) {
+        if (!comparepasswords(password, findUser.password)) {
           return done(null, false, { message: "Bad Credentials" });
         }
         return done(null, findUser);

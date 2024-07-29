@@ -45,6 +45,7 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization", 'X-Requested-With'],
     credentials: true,
+    optionsSuccessStatus: 204
   })
 );
 
@@ -53,6 +54,7 @@ app.options('*',  cors({
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization", 'X-Requested-With'],
   credentials: true,
+  optionsSuccessStatus: 204
 }));
 
 

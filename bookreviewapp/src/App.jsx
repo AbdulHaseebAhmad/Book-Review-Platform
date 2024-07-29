@@ -27,6 +27,9 @@ import SignupPage, { signupAuthAction } from "./Pages/Signup/Signup";
 import AllReviews from "./Pages/AllReviews/AllReviews";
 import { ROUTE_DEFAULT as USER_PROFILE_ROUTE } from "./Pages/User Profile/Constants";
 import UserProfile from "./Pages/User Profile/UserProfile";
+import ErrorBoundary from "./Pages/Error/Error";
+
+
 function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -34,6 +37,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
+      errorElement: <ErrorBoundary />,
       children: [
         {
           index: true,

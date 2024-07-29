@@ -1,12 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Form, Link, useSubmit, redirect } from "react-router-dom";
+import React, { useState } from "react";
+import {
+  Form,
+  Link,
+  useSubmit,
+  redirect,
+  useActionData,
+} from "react-router-dom";
 import { FORM_FIELDS, SignupSchema } from "./Constants";
-import Logo from "../../assets/logobgremoved.png";
-import Navbar from "../../Components/Navbar/Navbar";
+
 import { ROUTE_DEFAULT as SIGN_UP_PAGE_ROUTE } from "../Signup/Constants";
 import { ROUTE_DEFAULT as LOGIN_PAGE_ROUTE } from "./Constants";
-import axios from "axios";
-
 const LoginPage = () => {
   const submit = useSubmit();
   const [formValues, setFormValue] = useState({
@@ -14,6 +17,8 @@ const LoginPage = () => {
     password: "",
   });
 
+  const data = useActionData();
+  console.log(formValues)
   const [errors, setErrors] = useState({});
   const [formIsValid, setFormIsValid] = useState(false);
   const onChangeHandle = async (e) => {
@@ -99,6 +104,12 @@ const LoginPage = () => {
                   )}
               </div>
             ))}
+
+            {data && data.msg && (
+              <p className="text-red-600 font-semibold mt-2 mb-2">
+                {data.msg}
+              </p>
+            )}
             <button
               type="submit"
               className="w-full bg-[#223F7A] hover:bg-[#1a2e5b] text-white font-bold py-2 px-4 rounded"
@@ -160,7 +171,6 @@ export const loginAuthAction = async ({ request, params }) => {
   });
 
   const data = await response.json();
-  console.log(data, response.status);
 
   if (response.status === 200) {
     return redirect(`/home/users/${data.userid}`);
@@ -170,5 +180,9 @@ export const loginAuthAction = async ({ request, params }) => {
     return redirect(`/home/users/${data.userid}`);
   }
 
-  return null;
+  if (response.status === 400) {
+
+    return data;
+  }
+  return data
 };

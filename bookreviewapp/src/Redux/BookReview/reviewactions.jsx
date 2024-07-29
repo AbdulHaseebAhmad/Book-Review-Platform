@@ -1,4 +1,4 @@
-import axios from 'axios'; // Ensure axios is imported
+import axios from 'axios'; 
 
 
 import {
@@ -82,7 +82,7 @@ export const getpreviousReviews =
       };
   
       const { data } = await axios.post(
-        "http://localhost:5001/api/reviews/addreview", // !Forget to Replace with the correct endpoint
+        "http://localhost:5001/api/reviews/addreview", 
         reviewData,
         config
       );
@@ -106,7 +106,7 @@ export const getpreviousReviews =
       };
   
       const { data } = await axios.put(
-        `http://localhost:5001/api/reviews/editreview?reviewid=${reviewData._id}`, // Replace with the correct endpoint
+        `http://localhost:5001/api/reviews/editreview?reviewid=${reviewData._id}`,
         reviewData,
         config
       );

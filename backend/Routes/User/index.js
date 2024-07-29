@@ -100,7 +100,7 @@ userRoute.post(
       }
       request.logIn(user, (err) => {
         if (err) {
-          return next(err);
+          return response.status(400).send({ msg: info.message });
         }
         return response.status(200).send({
           msg: "User Logged In successfully",

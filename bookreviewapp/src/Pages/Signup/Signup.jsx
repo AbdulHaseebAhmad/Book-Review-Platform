@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Link, useSubmit, redirect } from "react-router-dom";
+import { Form, Link, useSubmit, redirect, useActionData } from "react-router-dom";
 import { FORM_FIELDS, SignupSchema } from "./Constants";
 import { ROUTE_DEFAULT as SIGNUP_PAGE_ROUTE } from "./Constants";
 const SignupPage = () => {
@@ -9,6 +9,8 @@ const SignupPage = () => {
     email: "",
     password: "",
   });
+
+  const data = useActionData()
 
   const [errors, setErrors] = useState({});
   const [formIsValid, setFormIsValid] = useState(false);
@@ -95,6 +97,12 @@ const SignupPage = () => {
                   )}
               </div>
             ))}
+
+            {data && data.msg && (
+              <p className="text-red-600 font-semibold mt-2 mb-2">
+                {data.msg}
+              </p>
+            )}
             <button
               type="submit"
               className="w-full bg-[#223F7A] hover:bg-[#1a2e5b] text-white font-bold py-2 px-4 rounded"
@@ -138,9 +146,7 @@ export const signupAuthAction = async ({ request, params }) => {
 
   if (response.status === 201) {
     return redirect(`/loginpage`);
-  } else {
-    return null;
-  }
+  } 
 
-  return null;
+  return data;
 };

@@ -36,7 +36,7 @@ export default function WelcomeElement() {
 
 export const welcomeAuthLoader = async ({ request, params }) => {
   
-  const response = await fetch("http://localhost:5001/api/users/auth/status", {
+  const response = await fetch("https://book-review-platform-qfuv.vercel.app/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {

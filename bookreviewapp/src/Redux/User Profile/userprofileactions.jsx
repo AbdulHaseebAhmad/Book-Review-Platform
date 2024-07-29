@@ -20,7 +20,7 @@ export const getUserProfile = () => async (dispatch) => {
       },
     };
     const { data } = await axios.get(
-      `http://localhost:5001/api/users/auth/status`,
+      `https://book-review-platform-qfuv.vercel.app/api/users/auth/status`,
       config
     );
     console.log(data.user);
@@ -43,7 +43,7 @@ export const editUserProfile = (userprofiledata) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `http://localhost:5001/api/users/edituser?userid=${userprofiledata._id}`, // Replace with the correct endpoint
+      `https://book-review-platform-qfuv.vercel.app/api/users/edituser?userid=${userprofiledata._id}`, // Replace with the correct endpoint
       userprofiledata,
       config
     );

@@ -18,7 +18,7 @@ const LoginPage = () => {
   });
 
   const data = useActionData();
-  console.log(formValues)
+  console.log(data);
   const [errors, setErrors] = useState({});
   const [formIsValid, setFormIsValid] = useState(false);
   const onChangeHandle = async (e) => {
@@ -52,7 +52,6 @@ const LoginPage = () => {
         encType: "application/json",
       });
     } else {
-  
       console.log(data && data);
     }
   };
@@ -106,11 +105,12 @@ const LoginPage = () => {
               </div>
             ))}
 
-            {data && data.msg && (
-              <p className="text-red-600 font-semibold mt-2 mb-2">
-                {data.msg}
-              </p>
-            )}
+            {data &&
+              data.msg && (
+                <p className="text-red-600 font-semibold mt-2 mb-2">
+                  {data.msg}
+                </p>
+              )}
             <button
               type="submit"
               className="w-full bg-[#223F7A] hover:bg-[#1a2e5b] text-white font-bold py-2 px-4 rounded"
@@ -182,8 +182,8 @@ export const loginAuthAction = async ({ request, params }) => {
   }
 
   if (response.status === 400) {
-
+    console.log(data);
     return data;
   }
-  return data
+  return data;
 };

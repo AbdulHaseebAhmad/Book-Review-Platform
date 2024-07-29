@@ -88,7 +88,7 @@ userRoute.post(
       request.validData = validData;
       next();
     } else {
-      response.status(400).send({msg:errorsArray});
+      response.status(400).send({msg:errorsArray[0].errormsg});
     }
   },
   (request, response, next) => {

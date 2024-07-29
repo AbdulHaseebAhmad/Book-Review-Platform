@@ -20,7 +20,8 @@ bookReviewRoute.get("/api/reviews/getallreviews", async (request, response) => {
       reviews = await Review.find();
       response.status(200).send(reviews);
     } else {
-      const query = { [filter]: filterValue };
+      const regex = new RegExp(filterValue, "i");
+      const query = { [filter]: { $regex: regex } };
       reviews = await Review.find(query);
       if (reviews.length === 0) {
         return response

@@ -1,8 +1,9 @@
 import { ROUTE_DEFAULT as ADD_BOOK_REVIEW_ROUTE } from "../AddBookReview/Constants";
 import { ROUTE_DEFAULT as VIEW_PREVIOUS_BOOK_REVIES } from "../PreviousReviews/Constants";
+import {ROUTE_DEFAULT as ALL_REVIEWS_ROUTE} from "../AllReviews/Constants"
 
 const VIEW_RECOMMENDED_BOOKS_ROUTES = "viewrecommendedbooks";
-const VIEW_ALL_BOOK_REVIEWS_ROUTE = "viewallreviews";
+export const ROUTE_DEFAULT = 'home'
 
 export const Cards = [
     {
@@ -26,7 +27,7 @@ export const Cards = [
     {
       content: "Check out all book reviews in our collection. Get insights and ratings from fellow readers.",
       cardname: "View All Book Reviews",
-      link: VIEW_ALL_BOOK_REVIEWS_ROUTE,
+      link: ALL_REVIEWS_ROUTE,
       id: 4,
     },
   ];

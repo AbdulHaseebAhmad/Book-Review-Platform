@@ -3,6 +3,7 @@ import Logo from "../../assets/logobgremoved.png";
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ROUTE_DEFAULT as USER_PROFILE_ROUTE} from "../../Pages/User Profile/Constants";
 import { useSelector } from 'react-redux';
+import { ROUTE_DEFAULT as HOME_ROUTE } from "../../Pages/Home/Constants";
 
 const Navbar = () => {
 
@@ -38,7 +39,7 @@ const Navbar = () => {
               HOME
             </Link>
             <Link
-              to={`/home/users/${userid}/${USER_PROFILE_ROUTE}`}
+              to={`/${HOME_ROUTE}/users/${userid}/${USER_PROFILE_ROUTE}`}
               className="text-[#223F7A] text-md font-semibold hover:bg-[#e6f0ff] px-2 py-7 rounded"
             >
               User Profile

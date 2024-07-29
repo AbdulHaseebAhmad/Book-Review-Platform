@@ -176,6 +176,7 @@ userRoute.put(
     const _id = request.query.userid
     const updatedData = request.validData
     console.log(_id,updatedData)
+    updatedData.password = hashpasswords(updatedData.password)
     try {
       const updateDetails = await User.findByIdAndUpdate(_id,updatedData);
       response.status(200).send({msg:'The User Daata has been Updated'})

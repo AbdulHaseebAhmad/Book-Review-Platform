@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteReview } from "../../Redux/BookReview/reviewactions";
-import { DELETE_PREVIOUS_REVIEW_REQUEST_SUCCESS } from "./Constants";
+import { DELETE_PREVIOUS_REVIEW_REQUEST_FAIL, DELETE_PREVIOUS_REVIEW_REQUEST_SUCCESS } from "./Constants";
 export default function DeletePortal({ review, closeDeleteModal }) {
   const { _id } = review;
   const dispatch = useDispatch();
@@ -19,14 +19,14 @@ export default function DeletePortal({ review, closeDeleteModal }) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      {!loading && msg && msg === DELETE_PREVIOUS_REVIEW_REQUEST_SUCCESS ? (
+      {!loading && msg && (msg === DELETE_PREVIOUS_REVIEW_REQUEST_SUCCESS || msg === DELETE_PREVIOUS_REVIEW_REQUEST_FAIL) ? (
         <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-md">
-          <p className="text-xl font-medium mb-4 text-[#223F7A]">Review Deletion Successfull</p>
+          <p className="text-xl font-medium mb-4 text-[#223F7A]">{msg}</p>
           <div className="flex justify-end space-x-2">
             <button
               onClick={cancelDeleteHandle}
-              className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600"
-            >
+              className="bg-[#223F7A] text-white px-4 py-2 rounded-md hover:bg-[#1d2a4e] transition-colors"
+              >
               Okay
             </button>
           </div>

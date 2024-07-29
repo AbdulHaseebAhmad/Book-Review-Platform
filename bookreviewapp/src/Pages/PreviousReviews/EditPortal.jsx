@@ -4,6 +4,7 @@ import {
   AddReviewSchema,
   EDIT_RIVIEW_REQUEST_SUCCESS,
   EDIT_REVIEW_REQUEST,
+  EDIT_REVIEW_REQUEST_FAIL
 } from "./Constants";
 import { Form, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -62,9 +63,9 @@ const EditBookReview = ({ review, closeEditModal }) => {
       <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-md">
         <h2 className="text-xl font-bold mb-4 text-[#223F7A]">Edit Review</h2>
 
-        {!loading && msg && msg === EDIT_RIVIEW_REQUEST_SUCCESS ? (
+        {!loading && msg && ( msg === EDIT_RIVIEW_REQUEST_SUCCESS ||  msg === EDIT_REVIEW_REQUEST_FAIL) ? (
           <div className="bg-white p-6 rounded-lg  w-11/12 max-w-md">
-            <p className="text-xl font-medium mb-4 text-[#223F7A]">Review Edit Successfull</p>
+            <p className="text-xl font-medium mb-4 text-[#223F7A]">{msg}</p>
             <div className="flex justify-end space-x-2">
               <button
                 onClick={cancelEditHandle}

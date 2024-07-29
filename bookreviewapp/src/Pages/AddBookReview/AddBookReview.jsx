@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FORM_FIELDS, AddReviewSchema } from "./Constants";
+import { FORM_FIELDS, AddReviewSchema, ADD_REVIEW_REQUEST_FAIL } from "./Constants";
 import { Form, useNavigate, useParams,Link } from "react-router-dom";
 import { addReview } from "../../Redux/BookReview/reviewactions";
 import { useDispatch, useSelector } from "react-redux";
@@ -67,10 +67,10 @@ const AddBookReviewPage = () => {
           Add a Book Review
         </h1>
 
-        {!loading && msg && msg === ADD_RIVIEW_REQUEST_SUCCESS ? (
+        {!loading && msg && ( msg === ADD_RIVIEW_REQUEST_SUCCESS ||  msg === ADD_REVIEW_REQUEST_FAIL) ? (
           <div className="bg-white p-6 rounded-lg  w-11/12 max-w-md">
             <p className="text-xl font-medium mb-4 text-[#223F7A]">
-              Review Added Successfull
+             {msg}
             </p>
             <div className="flex justify-end space-x-2">
               <button

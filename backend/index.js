@@ -43,20 +43,10 @@ app.use(
   cors({
     origin: ["http://localhost:5173","https://book-review-platform-mu.vercel.app/"], 
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-    allowedHeaders: ["Content-Type", "Authorization", 'X-Requested-With'],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
-    optionsSuccessStatus: 204
   })
 );
-
-app.options('*',  cors({
-  origin: ["http://localhost:5173","https://book-review-platform-mu.vercel.app/"], 
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-  allowedHeaders: ["Content-Type", "Authorization", 'X-Requested-With'],
-  credentials: true,
-  optionsSuccessStatus: 204
-}));
-
 
 app.use(userRoute);
 app.use(bookReviewRoute);

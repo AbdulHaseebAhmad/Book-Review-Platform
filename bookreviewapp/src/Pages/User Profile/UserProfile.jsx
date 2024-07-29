@@ -131,7 +131,7 @@ const UserProfile = () => {
               type="submit"
               className="w-full bg-[#223F7A] text-white p-2 rounded-md hover:bg-[#1d2a4e] transition-colors"
             >
-              Submit Review
+Update Data
             </button>
           )}
           <button

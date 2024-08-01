@@ -32,7 +32,7 @@ bookReviewRoute.get("/api/reviews/getallreviews", async (request, response) => {
     }
   } catch (err) {
     response
-      .status(500) 
+      .status(500)
       .json({ message: "An error occurred", error: err.message });
   }
 });
@@ -126,6 +126,39 @@ bookReviewRoute.delete(
       console.log(reviewid);
       response.status(200).send(reviewid);
     }
+  }
+);
+
+//Get Recommended Reviews Based on The Reviews Submitedd by User the recommendatiion is based of genre
+
+bookReviewRoute.get(
+  "/api/reviews/recommendedreviews",
+  (request, response, next) => {
+    if (request.isAuthenticated()) {
+      next()
+    }
+  },
+  async (request, response, next) => {
+    let genresArray = [];
+    const findgenres = await Review.find({ reviewbyuser: request.user._id });
+    for (const genre in findgenres) {
+      genresArray.push(findgenres[genre].bookgenre);
+    }
+    request.genresArray = genresArray;
+    next()
+  } , async (request,response,next) => {
+    const genresArray = request.genresArray;
+    const {query:{userId}} = request;
+    const SimillarReviews = await Review.find(
+      {
+        bookgenre : {$in : genresArray},
+        reviewbyuser : {$ne : userId}
+      }
+    )
+    
+    console.log(genresArray)
+    console.log(SimillarReviews)
+    response.status(200).send(SimillarReviews)
   }
 );
 

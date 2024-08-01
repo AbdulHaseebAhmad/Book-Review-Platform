@@ -40,7 +40,7 @@ userRoute.post(
       request.validData = validData;
       next();
     } else {
-      response.send(errorsArray);
+      response.send({msg:errorsArray});
     }
   },
   async (request, response) => {

@@ -141,13 +141,13 @@ export const signupAuthAction = async ({ request, params }) => {
     body: JSON.stringify(requestBody),
   });
 
-  const data = await response.json();
+ // const data = await response.json();
 
-  console.log(data, response.status);
+ // console.log(data, response.status);
 
   if (response.status === 201) {
     return redirect(`/loginpage`);
   } 
 
-  return data;
+  return null;
 };
